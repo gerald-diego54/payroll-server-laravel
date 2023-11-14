@@ -24,7 +24,15 @@ class RegisterRequest extends FormRequest
         return [
             "email" => ["required", "email"],
             "password" => ["required", "string", "min:12"],
-            "name" => ["required", "string"],
+            "first_name" => ["required", "string"],
+            "last_name" => ["required", "string"],
+            "middle_name" => ["required", "string"],
+            "landline_number" => ["required", "string"],
+            "mobile_number" => ["required", "string"],
+            "company" => ["required", "string"],
+            "branch" => ["required", "string"],
+            "position" => ["required", "string"],
+            "leave_type" => ["required", "string"],
         ];
     }
 }
