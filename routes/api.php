@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LeaveController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
@@ -23,7 +24,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::post("/login", LoginController::class);
 Route::post("/register", RegisterController::class);
-
+Route::post("/leave", LeaveController::class);
+// Route::post("leave", [LeaveController::class, "store"]);
 // Route::group(["middleware" => ["auth:sanctum"]], function () {
 //     Route::post("/login", UserController::class);
 // });

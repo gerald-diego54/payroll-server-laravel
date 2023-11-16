@@ -17,9 +17,9 @@ class RegisterResource extends JsonResource
         return array(
             "email" => $this->email,
             "password" => $this->password,
-            "first_name" => $this->name,
-            "middle_name" => $this->midlle_name,
+            "first_name" => $this->first_name,
             "last_name" => $this->last_name,
+            "middle_name" => $this->middle_name,
             "mobile_number" => $this->mobile_number,
             "landline_number" => $this->landline_number,
             "company" => $this->company,
