@@ -24,7 +24,6 @@ class LeaveController extends Controller
             "approve",
             "remarks"
         );
-        var_dump($data);
         $leaveApp = LeaveModel::create($data);
         return (new LeaveResource($leaveApp));
 

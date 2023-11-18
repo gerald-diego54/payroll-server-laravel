@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class LeaveModel extends Model
 {
-    public $table = 'leave';
+
     use HasFactory, SoftDeletes;
+    public $table = 'leave';
     protected $fillable = [
         'leave_application_number',
         'date',
