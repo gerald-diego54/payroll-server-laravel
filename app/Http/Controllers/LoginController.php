@@ -12,10 +12,11 @@ class LoginController extends Controller
 {
     public function __invoke(Request $request)
     {
-        $credentials = $request->only("email", "password");
+        $credentials = $request->only("username", "password");
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
-            $token = $user->createToken("token")->plainTextToken;
+            var_dump($user->createToken("token",  ["*"])->plainTextToken);
+            $token = $user->createToken("token",  ["*"])->plainTextToken;
             return (new LoginResource($user))->additional(["token" => $token]);
         }
 
