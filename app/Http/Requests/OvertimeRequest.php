@@ -22,6 +22,7 @@ class OvertimeRequest extends FormRequest
     public function rules(): array
     {
         return [
+            "user_id" => ['integer'],
             "overtime_application_number" => ['required', 'min:10'],
             "overtime_date" => ['date'],
             "overtime_hours" => ['integer'],

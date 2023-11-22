@@ -11,6 +11,7 @@ class Overtime extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
         'overtime_application_number',
         'overtime_date',
         'password',

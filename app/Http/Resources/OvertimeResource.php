@@ -16,6 +16,7 @@ class OvertimeResource extends JsonResource
     {
         return array (
             "id" => $this->id,
+            "user_id" => $this->user_id,
             "overtime_application_number" => $this->overtime_application_number,
             "overtime_date" => $this->overtime_date,
             "overtime_hours" => $this->overtime_hours,

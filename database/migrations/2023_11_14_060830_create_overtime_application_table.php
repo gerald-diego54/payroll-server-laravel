@@ -14,6 +14,7 @@ return new class extends Migration
         
         Schema::create('overtime_application', function (Blueprint $table) {
             $table->id('overtime_id');
+            $table->integer('user_id');
             $table->integer('overtime_application_number');
             $table->date('overtime_date');
             $table->integer('overtime_hours');
