@@ -9,13 +9,13 @@ use Illuminate\Http\Request;
 
 class LeaveController extends Controller
 {
-    //
-    // public function store(LeaveRequest $request)
+
     public function __invoke(LeaveRequest $request)
     {
 
         $data = $request->only(
-            "leave_application_number",
+            "leave_id",
+            "user_id",
             "date",
             "cutoff_remarks",
             "half_day",

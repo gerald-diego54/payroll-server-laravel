@@ -12,7 +12,8 @@ class LeaveModel extends Model
     use HasFactory, SoftDeletes;
     public $table = 'leave';
     protected $fillable = [
-        'leave_application_number',
+        'leave_id',
+        'user_id',
         'date',
         'cutoff_remarks',
         'leave_type',

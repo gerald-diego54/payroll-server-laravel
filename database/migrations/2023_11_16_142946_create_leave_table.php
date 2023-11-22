@@ -11,7 +11,8 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('leave', function (Blueprint $table) {
-            $table->integer('leave_application_number');
+            $table->string('leave_id');
+            $table->string('user_id');
             $table->date('date');
             $table->string('cutoff_remarks');
             $table->string('leave_type');

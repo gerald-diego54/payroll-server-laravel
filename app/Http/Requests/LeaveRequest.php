@@ -22,7 +22,8 @@ class LeaveRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "leave_application_number" => ['required'],
+            "leave_id" => ['required', 'string'],
+            "user_id" => ['required', 'string'],
             "date" => ['required', 'date'],
             "cutoff_remarks" => ['required', 'string'],
             "leave_type" => ['required', 'string'],
