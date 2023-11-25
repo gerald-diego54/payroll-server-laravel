@@ -25,7 +25,6 @@ class RegisterController extends Controller
             "position",
             "leave_type",
         );
-        var_dump($data);
         $user = User::create($data);
         $token = $user->createToken("token")->plainTextToken;
         return (new RegisterResource($user))->additional(["token" => $token]);

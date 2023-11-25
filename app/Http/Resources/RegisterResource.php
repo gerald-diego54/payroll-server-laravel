@@ -15,7 +15,7 @@ class RegisterResource extends JsonResource
     public function toArray(Request $request): array
     {
         return array(
-            "user_name" => $this->user_name,
+            "email" => $this->email,
             "first_name" => $this->first_name,
             "last_name" => $this->last_name,
             "middle_name" => $this->middle_name,
