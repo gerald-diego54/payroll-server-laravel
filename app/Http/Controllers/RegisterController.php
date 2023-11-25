@@ -13,7 +13,7 @@ class RegisterController extends Controller
     public function __invoke(RegisterRequest $request)
     {
         $data = $request->only(
-            "user_name",
+            "email",
             "password",
             "first_name",
             "last_name",
