@@ -23,11 +23,10 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::post("/login", LoginController::class);
-Route::post("/register", RegisterController::class);
-Route::post("/leave", LeaveController::class);
-Route::post("/overtime", OvertimeController::class);
+Route::post("login", LoginController::class);
+Route::post("register", RegisterController::class);
 
-// Route::group(["middleware" => ["auth:sanctum"]], function () {
-//     Route::post("/login", UserController::class);
-// });
+Route::group(['middleware' => 'auth:sanctum'], function () {
+    Route::post("leave", LeaveController::class);
+    Route::post("overtime", OvertimeController::class);
+});

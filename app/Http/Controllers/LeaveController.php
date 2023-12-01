@@ -14,7 +14,6 @@ class LeaveController extends Controller
     {
 
         $data = $request->only(
-            "leave_id",
             "user_id",
             "date",
             "cutoff_remarks",
@@ -24,8 +23,7 @@ class LeaveController extends Controller
             "approve",
             "remarks"
         );
-        $leaveApp = LeaveModel::create($data);
-        return (new LeaveResource($leaveApp));
-
+        $leave = LeaveModel::create($data);
+        return (new LeaveResource($leave));
     }
 }

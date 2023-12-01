@@ -15,6 +15,7 @@ class LoginController extends Controller
         $credentials = $request->only("email", "password");
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
+            /** @var \App\Models\User $user **/
             $token = $user->createToken("token")->plainTextToken;
             return (new LoginResource($user))->additional(["token" => $token]);
         }

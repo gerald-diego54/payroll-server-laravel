@@ -25,6 +25,5 @@ class LeaveResource extends JsonResource
             "approve" => $this->approve,
             "remarks" => $this->remarks,
         );
-
     }
 }

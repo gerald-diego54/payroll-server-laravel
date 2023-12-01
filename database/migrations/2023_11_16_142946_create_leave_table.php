@@ -4,14 +4,15 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
     /**
      * Run the migrations.
      */
     public function up(): void
     {
         Schema::create('leave', function (Blueprint $table) {
-            $table->integer('leave_id');
+            $table->id('leave_id');
             $table->integer('user_id');
             $table->date('date');
             $table->string('cutoff_remarks');
