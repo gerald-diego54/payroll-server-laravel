@@ -11,19 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        
+
         Schema::create('overtime_application', function (Blueprint $table) {
             $table->id('overtime_id');
-            $table->integer('user_id');
-            $table->integer('overtime_application_number');
+            $table->integer("user_id");
             $table->date('overtime_date');
             $table->integer('overtime_hours');
             $table->boolean('approved');
             $table->boolean('convert_to_offset_credits');
             $table->string('cutoff_remarks');
             $table->string('remarks');
-            $table->timestamp('created_at')->nullable();
-            $table->timestamp('updated_at')->nullable();
+            $table->timestamps();
+            $table->softDeletes($column = "deleted_at", $precision = 0);
         });
     }
 

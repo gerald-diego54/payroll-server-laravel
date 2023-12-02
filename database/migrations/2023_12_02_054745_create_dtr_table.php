@@ -11,16 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('leave', function (Blueprint $table) {
-            $table->id('leave_id');
+        Schema::create('dtr', function (Blueprint $table) {
+            $table->id("dtr_id");
             $table->integer("user_id");
-            $table->date('date');
-            $table->string('cutoff_remarks');
-            $table->string('leave_type');
-            $table->boolean('half_day');
-            $table->boolean('with_pay');
-            $table->boolean('approve');
-            $table->string('remarks');
+            $table->date("dtr_user_date");
+            $table->time("time_in");
+            $table->time("time_out");
+            $table->string("remarks");
             $table->timestamps();
             $table->softDeletes($column = "deleted_at", $precision = 0);
         });
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('leave');
+        Schema::dropIfExists('dtr');
     }
 };

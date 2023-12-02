@@ -10,7 +10,7 @@ class LeaveModel extends Model
 {
 
     use HasFactory, SoftDeletes;
-    public $table = 'leave';
+    protected $table = 'leave';
 
     protected $primaryKey = "leave_id";
     protected $fillable = [

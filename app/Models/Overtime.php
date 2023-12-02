@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Overtime extends Model
 {
-    public $table = 'overtime_application';
+    protected $table = 'overtime_application';
     use HasFactory;
 
     protected $fillable = [
