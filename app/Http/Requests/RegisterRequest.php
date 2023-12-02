@@ -27,6 +27,7 @@ class RegisterRequest extends FormRequest
             "first_name" => ["required", "string"],
             "last_name" => ["required", "string"],
             "middle_name" => ["required", "string"],
+            "address" => ["required", "string"],
             "landline_number" => ["required", "string"],
             "mobile_number" => ["required", "string"],
             "company" => ["required", "string"],

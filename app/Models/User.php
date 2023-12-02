@@ -27,6 +27,7 @@ class User extends Authenticatable
         "first_name",
         "last_name",
         "middle_name",
+        "address",
         "mobile_number",
         "landline_number",
         "position",

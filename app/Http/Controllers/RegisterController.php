@@ -18,6 +18,7 @@ class RegisterController extends Controller
             "first_name",
             "last_name",
             "middle_name",
+            "address",
             "landline_number",
             "mobile_number",
             "company",
@@ -25,7 +26,7 @@ class RegisterController extends Controller
             "position",
             "leave_type",
         );
-        
+
         $user = User::create($data);
         $token = $user->createToken("token")->plainTextToken;
         return (new RegisterResource($user))->additional(["token" => $token]);
