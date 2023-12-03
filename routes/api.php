@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OvertimeController;
+use App\Http\Controllers\AuthController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -28,8 +29,10 @@ Route::post("login", LoginController::class);
 Route::post("register", RegisterController::class);
 Route::get("user/{user_id}", [UserController::class, "index"]);
 
+
 Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post("leave", LeaveController::class);
     Route::post("overtime", OvertimeController::class);
+    Route::post('logout', AuthController::class);
     // Route::get("user/:user_id", UserController::class);
 });
