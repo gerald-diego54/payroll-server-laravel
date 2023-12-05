@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -15,8 +14,8 @@ return new class extends Migration
             $table->id('tax_id');
             $table->foreign('gross_id')->references('id')->on('gross');
             $table->integer('sss');
-            $table->integer('pag-big');
-            $table->integer('philhealth');
+            $table->integer('pag_big');
+            $table->integer('phil_health');
         });
     }
 

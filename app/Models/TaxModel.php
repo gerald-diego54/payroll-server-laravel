@@ -13,7 +13,7 @@ class TaxModel extends Model
     protected $fillable = [
         "tax_id",
         "sss",
-        "pag-ibig",
-        "philhealth",
+        "pag_ibig",
+        "phil_health",
     ];
 }
