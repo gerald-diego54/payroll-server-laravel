@@ -27,6 +27,8 @@ use Illuminate\Support\Facades\Route;
 Route::post("login", LoginController::class);
 Route::post("register", RegisterController::class);
 Route::get("user/{user_id}", [UserController::class, "index"]);
+Route::get("computation", ComputationController::class);
+Route::get("/computation/pdf", [ComputationController::class, 'createPDF']);
 
 Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post("leave", LeaveController::class);
