@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ComputationRequest extends FormRequest
+class GrossRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,7 +22,10 @@ class ComputationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "gross_Id" => ['required', 'integer'],
+            "daily_rate" => ['required', 'integer'],
+            "basic_salary" => ['required', 'integer'],
+            "overtime" => ['required', 'integer'],
         ];
     }
 }

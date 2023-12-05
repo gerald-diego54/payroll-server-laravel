@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OvertimeController;
+use App\Http\Controllers\ComputationController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -27,8 +28,8 @@ use Illuminate\Support\Facades\Route;
 Route::post("login", LoginController::class);
 Route::post("register", RegisterController::class);
 Route::get("user/{user_id}", [UserController::class, "index"]);
-Route::get("computation", ComputationController::class);
-Route::get("/computation/pdf", [ComputationController::class, 'createPDF']);
+Route::post("gross", [ComputationController::class, 'Gross'] );
+Route::post("tax", [ComputationController::class, 'Tax']);
 
 Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post("leave", LeaveController::class);
