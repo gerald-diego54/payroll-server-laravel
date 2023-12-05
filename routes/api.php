@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LeaveController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OvertimeController;
@@ -31,5 +32,6 @@ Route::get("user/{user_id}", [UserController::class, "index"]);
 Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post("leave", LeaveController::class);
     Route::post("overtime", OvertimeController::class);
+    Route::post("logout", LogoutController::class);
     // Route::get("user/:user_id", UserController::class);
 });
